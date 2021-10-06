@@ -21,6 +21,6 @@ app.use((req, res, next) => {
 app.use('/api', require('./routes/downloads'));
 
 //SETTINGS
-app.set('port', config.SERVER_PORT || 4000);
+app.set('port', process.env.PORT || config.SERVER_PORT);
 
 module.exports = app;

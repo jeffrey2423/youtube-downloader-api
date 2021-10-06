@@ -1,7 +1,4 @@
 {
- 
-
-
   "name": "youtube-downloader-api",
   "version": "1.0.0",
   "description": "REST API for download YouTube videos in several formats",

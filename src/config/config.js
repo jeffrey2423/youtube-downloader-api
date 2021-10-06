@@ -5,7 +5,8 @@ module.exports = {
             server: [
                 {
                     origin: "*", //servidor que deseas "localhost:3000" que consuma o (*) en caso que sea acceso libre
-                    credentials: true
+                    credentials: true,
+                    exposedHeaders: ['Content-Disposition']
                 }
             ]
         }

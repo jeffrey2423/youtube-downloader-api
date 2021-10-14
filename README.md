@@ -20,7 +20,8 @@ cd youtube-downloader-api
 ```sh
 docker-compose -f docker-compose.yml build  
 ```
-You will see how it creates the container. 
+You will see how the container is build. 
+
 
 Once done, run the Docker image.
 ```sh
@@ -64,7 +65,8 @@ Then run the above mentioned commands to build and run the docker image.
 cd youtube-downloader-api
 docker-compose -f docker-compose.prod.yml build  
 ```
-You will see how it creates the container. 
+You will see how the container is build.
+
 
 Once done, run the Docker image.
 ```sh
@@ -87,7 +89,7 @@ If you want to terminate the process, run
 docker-compose -f docker-compose.prod.yml down
 ```
 
-Verify the development environment by navigating to your server address in your preferred browser.
+Verify the production environment by navigating to your server address in your preferred browser.
 
 ```sh
 127.0.0.1:5000

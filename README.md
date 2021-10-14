@@ -15,6 +15,9 @@ youtube-downloader-api is very easy to install and deploy in a Docker container.
 
 ```sh
 cd youtube-downloader-api
+```
+
+```sh
 docker-compose -f docker-compose.yml build  
 ```
 You will see how it creates the container. 

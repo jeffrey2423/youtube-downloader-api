@@ -9,28 +9,28 @@ Downloader.DownloadVideo = (req, res, next) => {
 
             ytdl(url, {
                 filter: 'audioonly'
-            }).on('info', (info, error) => {
-                if (error) {
-                    res.json({ error: true, descError: error })
-                } else {
-                    if (info) {
-                        audioName = info.videoDetails.title
-                    } else {
-                        audioName = "Audio"
-                    }
+            }).on('info', (info) => {
 
-                    res.header(`Content-Type: audio/mp3;`);
-                    res.header(`Content-Disposition: attachment; filename=${audioName}.mp3`);
-                    res.statusMessage = `${audioName}.mp3`
-                    res.attachment(audioName + '.mp3')
+                if (info) {
+                    audioName = info.videoDetails.title
+                } else {
+                    audioName = "Audio"
                 }
+
+                res.header(`Content-Type: audio/mp3;`);
+                res.header(`Content-Disposition: attachment; filename=${audioName}.mp3`);
+                res.statusMessage = `${audioName}.mp3`
+                res.attachment(audioName + '.mp3')
+
             }).pipe(res);
         } else {
-            res.json({ error: true, descError: "Video could not be converted" })
+            res.statusMessage = `Video could not be converted`
+            res.status(500)
         }
 
     } catch (error) {
-        res.json({ error: true, descError: "Video could not be converted " + error.message })
+        res.statusMessage = "Video could not be converted " + error.message
+        res.status(500)
     }
 }
 

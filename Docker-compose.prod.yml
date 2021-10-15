@@ -4,6 +4,8 @@ services:
         build:  
           context: ./
           dockerfile: ./Dockerfile.prod
+        ports:
+          - "4000:4000"
         restart: always
         container_name: youtube-downloader-api-prod       
         volumes: 
